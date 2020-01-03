@@ -9,7 +9,30 @@
 
 using namespace std;
 
+const double MEDIAN_INCOME = 58760;
+const double ANNINCOME_LIMIT1 = 10000;
+const double ANNINCOME_LIMIT2 = 15000;
+const double ANNINCOME_LIMIT3 = 20000;
+const double ANNINCOME_LIMIT4 = 25000;
+const int ANNINCOME_LIMIT5_MEDPrecent = 60;
+double MEDIAN_INCOME_PRECENT;
+const double TWOBED_Rate1 = 555;
+const double TWOBED_Rate2 = 665;
+const double TWOBED_Rate3 = 825;
+const double ONEBED_Rate1 = 499;
+const double ONEBED_Rate2 = 599;
+const double ONEBED_Rate3 = 755;
+const double ONE_TWO_BED_Rate1 = 2.5;
+const double ONE_TWO_BED_Rate2 = 3;
+const double PRECENT = 100;
+
 int main() {
-    cout << "Hello, World!" << endl;
+    double houseAnnIncome;
+    int numBedrooms;
+    const int MONTHS = 12;
+    // variables to Hold Output Values
+    double monthRate;
+    double annCost;
+
     return 0;
 }
