@@ -54,6 +54,7 @@ int main() {
     }
     if (houseAnnIncome < ANNINCOME_LIMIT2)
         // Output
+        cout << fixed << setprecision(2);
         cout << " Rental Costs " << endl << endl;
     // setprecision output manipulators scientific  values rounded  two decimal places
     cout << fixed << setprecision(2);
@@ -69,7 +70,64 @@ int main() {
 // Input parameter:  Take in two input parameter,  The annual income and if qualify the number of bed rooms up to two
 // Returns: The monthly rate fee, if successful
 double  AnnIncomeRates(double houseAnnIncome, int numBedrooms) {
+
     double monthlyRate;
     MEDIAN_INCOME_PRECENT = MEDIAN_INCOME * ANNINCOME_LIMIT5_MEDPrecent / PRECENT;
 
+    if (houseAnnIncome <= ANNINCOME_LIMIT1) {
+
+        monthlyRate = houseAnnIncome * ONE_TWO_BED_Rate1 / PRECENT;
+
+    }
+    else if (houseAnnIncome >= ANNINCOME_LIMIT1 && houseAnnIncome < ANNINCOME_LIMIT2) {
+
+        monthlyRate = houseAnnIncome * ONE_TWO_BED_Rate2 / PRECENT;
+
+    }
+
+    else if (houseAnnIncome >= ANNINCOME_LIMIT2 && houseAnnIncome < ANNINCOME_LIMIT3) {
+
+        if (numBedrooms == 1) {
+
+            monthlyRate = ONEBED_Rate1;
+
+        }
+
+        else if (numBedrooms == 2)  {
+
+            monthlyRate = TWOBED_Rate1;
+
+        }
+
+    }
+    else if (houseAnnIncome >= ANNINCOME_LIMIT3 && houseAnnIncome < ANNINCOME_LIMIT4) {
+
+        if (numBedrooms == 1) {
+
+            monthlyRate = ONEBED_Rate2;
+
+        }
+        else if (numBedrooms == 2) {
+
+            monthlyRate = TWOBED_Rate2;
+
+        }
+
+    }
+    else  if (houseAnnIncome >= ANNINCOME_LIMIT4 && houseAnnIncome < MEDIAN_INCOME_PRECENT) {
+
+        if (numBedrooms == 1) {
+
+            monthlyRate = ONEBED_Rate3;
+
+        }
+
+        else if (numBedrooms == 2) {
+
+            monthlyRate = TWOBED_Rate3;
+
+        }
+    }
+
+    return monthlyRate;
 }
