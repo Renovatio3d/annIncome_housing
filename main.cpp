@@ -30,17 +30,8 @@ const double ONE_TWO_BED_Rate1 = 2.5;
 const double ONE_TWO_BED_Rate2 = 3;
 const double PRECENT = 100;
 
-
-
-// User define function prototype
 double  AnnIncomeRates(double houseAnnIncome, int numBedrooms);
 
-///////////////////////////////////////////////////////////////////////////////////
-// Description: Main() Reads the in the household annual income, and number     //
-// of bed rooms, AnnIncomeRates() function which to determine the return rates.//
-//                                                                            //
-// Returns:  0 if successful                                                 //
-//////////////////////////////////////////////////////////////////////////////
 int main()
 {
     double houseAnnIncome;
@@ -84,7 +75,7 @@ int main()
 
 }
 // Description:  The function determine annual home rates and cost of the type of unit desired to return.                                                            //
-// Input parameter:  Take in two input parameter, The annual income and if qualify the number of bed rooms up to two                                                //
+// Input parameter: Take in two input parameter, The annual income and if qualify the number of bed rooms up to two                                                //
 // Returns: The monthly rate fee, if successful
 
 double  AnnIncomeRates(double houseAnnIncome, int numBedrooms) {
