@@ -33,6 +33,20 @@ int main() {
     // variables to Hold Output Values
     double monthRate;
     double annCost;
+    //Read input from user
+    cout << " Rent Calculation Program for Low-Income Housing" << endl << endl;
+    cout << " Enter the household annual income: ";
+    cin >> houseAnnIncome;
+    cout << endl;
+    //houseAnnIncome > 60 % MEDIAN_INCOME
+    //houseAnnIncome > MEDIAN_INCOME / 60%
+    MEDIAN_INCOME_PRECENT = MEDIAN_INCOME * ANNINCOME_LIMIT5_MEDPrecent / PRECENT;
+    if (houseAnnIncome >= MEDIAN_INCOME_PRECENT) {
+        cout << " Income too high for low-income housing" << endl << endl;
+        system("PAUSE");
+        return 0;
+    }
+
 
     return 0;
 }
