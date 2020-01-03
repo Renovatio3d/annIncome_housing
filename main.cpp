@@ -43,7 +43,6 @@ int main() {
     MEDIAN_INCOME_PRECENT = MEDIAN_INCOME * ANNINCOME_LIMIT5_MEDPrecent / PRECENT;
     if (houseAnnIncome >= MEDIAN_INCOME_PRECENT) {
         cout << " Income too high for low-income housing" << endl << endl;
-        system("PAUSE");
         return 0;
     }
     if (houseAnnIncome >= ANNINCOME_LIMIT2 && houseAnnIncome < MEDIAN_INCOME_PRECENT) {
@@ -51,6 +50,16 @@ int main() {
         cin >> numBedrooms;
         cout << endl;
     }
+    if (houseAnnIncome < ANNINCOME_LIMIT2)
+        // Output
+        cout << " Rental Costs " << endl << endl;
+    // setprecision output manipulators scientific  values rounded  two decimal places
+    cout << fixed << setprecision(2);
+    cout << setw(10) << " Annual Income:" << setw(14) << houseAnnIncome << endl;
+    cout << setw(10) << " Monthly Rate:" << setw(15) << monthRate << endl;
+    cout << setw(10) << " Annual Cost:" << setw(16) << annCost << endl << endl;
+
 
     return 0;
+
 }
