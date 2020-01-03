@@ -69,6 +69,7 @@ int main() {
 // Input parameter:  Take in two input parameter,  The annual income and if qualify the number of bed rooms up to two
 // Returns: The monthly rate fee, if successful
 double  AnnIncomeRates(double houseAnnIncome, int numBedrooms) {
-
+    double monthlyRate;
+    MEDIAN_INCOME_PRECENT = MEDIAN_INCOME * ANNINCOME_LIMIT5_MEDPrecent / PRECENT;
 
 }
