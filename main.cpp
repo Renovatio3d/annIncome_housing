@@ -9,6 +9,7 @@
 
 using namespace std;
 
+// Global constant variables
 const double MEDIAN_INCOME = 58760;
 const double ANNINCOME_LIMIT1 = 10000;
 const double ANNINCOME_LIMIT2 = 15000;
@@ -16,26 +17,38 @@ const double ANNINCOME_LIMIT3 = 20000;
 const double ANNINCOME_LIMIT4 = 25000;
 const int ANNINCOME_LIMIT5_MEDPrecent = 60;
 double MEDIAN_INCOME_PRECENT;
+
 const double TWOBED_Rate1 = 555;
 const double TWOBED_Rate2 = 665;
 const double TWOBED_Rate3 = 825;
+
 const double ONEBED_Rate1 = 499;
 const double ONEBED_Rate2 = 599;
 const double ONEBED_Rate3 = 755;
+
 const double ONE_TWO_BED_Rate1 = 2.5;
 const double ONE_TWO_BED_Rate2 = 3;
 const double PRECENT = 100;
 
+
+
+// User define function prototype
 double  AnnIncomeRates(double houseAnnIncome, int numBedrooms);
 
-int main() {
+///////////////////////////////////////////////////////////////////////////////////
+// Description: Main() Reads the in the household annual income, and number     //
+// of bed rooms, AnnIncomeRates() function which to determine the return rates.//
+//                                                                            //
+// Returns:  0 if successful                                                 //
+//////////////////////////////////////////////////////////////////////////////
+int main()
+{
     double houseAnnIncome;
     int numBedrooms;
     const int MONTHS = 12;
-    // variables to Hold Output Values
     double monthRate;
     double annCost;
-    //Read input from user
+
     cout << " Rent Calculation Program for Low-Income Housing" << endl << endl;
     cout << " Enter the household annual income: ";
     cin >> houseAnnIncome;
@@ -48,10 +61,15 @@ int main() {
         return 0;
     }
     if (houseAnnIncome >= ANNINCOME_LIMIT2 && houseAnnIncome < MEDIAN_INCOME_PRECENT) {
+
         cout << " Unit type: How many bedrooms (1 or 2)? ";
         cin >> numBedrooms;
         cout << endl;
     }
+    // return user-func and Calculation
+    monthRate = AnnIncomeRates(houseAnnIncome, numBedrooms);
+    annCost = monthRate * MONTHS;
+
     if (houseAnnIncome < ANNINCOME_LIMIT2)
         // Output
         cout << fixed << setprecision(2);
@@ -62,13 +80,13 @@ int main() {
     cout << setw(10) << " Monthly Rate:" << setw(15) << monthRate << endl;
     cout << setw(10) << " Annual Cost:" << setw(16) << annCost << endl << endl;
 
-
     return 0;
 
 }
-// Description:  The function determine annual home rates and cost of the type of unit desired to return.
-// Input parameter:  Take in two input parameter,  The annual income and if qualify the number of bed rooms up to two
+// Description:  The function determine annual home rates and cost of the type of unit desired to return.                                                            //
+// Input parameter:  Take in two input parameter, The annual income and if qualify the number of bed rooms up to two                                                //
 // Returns: The monthly rate fee, if successful
+
 double  AnnIncomeRates(double houseAnnIncome, int numBedrooms) {
 
     double monthlyRate;
@@ -79,10 +97,10 @@ double  AnnIncomeRates(double houseAnnIncome, int numBedrooms) {
         monthlyRate = houseAnnIncome * ONE_TWO_BED_Rate1 / PRECENT;
 
     }
+
     else if (houseAnnIncome >= ANNINCOME_LIMIT1 && houseAnnIncome < ANNINCOME_LIMIT2) {
 
         monthlyRate = houseAnnIncome * ONE_TWO_BED_Rate2 / PRECENT;
-
     }
 
     else if (houseAnnIncome >= ANNINCOME_LIMIT2 && houseAnnIncome < ANNINCOME_LIMIT3) {
@@ -90,16 +108,15 @@ double  AnnIncomeRates(double houseAnnIncome, int numBedrooms) {
         if (numBedrooms == 1) {
 
             monthlyRate = ONEBED_Rate1;
-
         }
 
         else if (numBedrooms == 2)  {
 
             monthlyRate = TWOBED_Rate1;
-
         }
 
     }
+
     else if (houseAnnIncome >= ANNINCOME_LIMIT3 && houseAnnIncome < ANNINCOME_LIMIT4) {
 
         if (numBedrooms == 1) {
@@ -114,6 +131,7 @@ double  AnnIncomeRates(double houseAnnIncome, int numBedrooms) {
         }
 
     }
+
     else  if (houseAnnIncome >= ANNINCOME_LIMIT4 && houseAnnIncome < MEDIAN_INCOME_PRECENT) {
 
         if (numBedrooms == 1) {
@@ -127,7 +145,10 @@ double  AnnIncomeRates(double houseAnnIncome, int numBedrooms) {
             monthlyRate = TWOBED_Rate3;
 
         }
+
     }
 
+
     return monthlyRate;
+
 }
