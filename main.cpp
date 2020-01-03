@@ -46,7 +46,11 @@ int main() {
         system("PAUSE");
         return 0;
     }
-
+    if (houseAnnIncome >= ANNINCOME_LIMIT2 && houseAnnIncome < MEDIAN_INCOME_PRECENT) {
+        cout << " Unit type: How many bedrooms (1 or 2)? ";
+        cin >> numBedrooms;
+        cout << endl;
+    }
 
     return 0;
 }
