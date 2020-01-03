@@ -26,6 +26,8 @@ const double ONE_TWO_BED_Rate1 = 2.5;
 const double ONE_TWO_BED_Rate2 = 3;
 const double PRECENT = 100;
 
+double  AnnIncomeRates(double houseAnnIncome, int numBedrooms);
+
 int main() {
     double houseAnnIncome;
     int numBedrooms;
@@ -61,5 +63,12 @@ int main() {
 
 
     return 0;
+
+}
+// Description:  The function determine annual home rates and cost of the type of unit desired to return.
+// Input parameter:  Take in two input parameter,  The annual income and if qualify the number of bed rooms up to two
+// Returns: The monthly rate fee, if successful
+double  AnnIncomeRates(double houseAnnIncome, int numBedrooms) {
+
 
 }
